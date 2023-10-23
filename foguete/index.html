@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/stars.css" />
+  </head>
+  <body style="font-family: sans-serif">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div class="containerMain">
+      <div class="containerLeft">
+        <div class="informacoesClicks">
+          <h1 id="quantidadeClicks"></h1>
+          <h2 id="infoClicks"></h2>
+        </div>
+        <span class="variableValue" id="qntdClick"></span>
+        <img src="images/moon.png" onclick="clicado()" class="moon" id="showButton"></img>  
+      </div>
+      <div class="containerRight">
+        <div class="buffs">
+          <div class="upgrades">
+            <button onclick="upgrade1()" class="buttonUpgrades">
+              <i class="fa-solid fa-user-astronaut"></i>
+              <span class="astronauta"><b>Astronauta</b></span>
+              <br />
+              <span id="custoUp1"></span>
+              <span id="qntdUp1"></span>
+            </button>
+            <button onclick="upgrade2()" class="buttonUpgrades">
+              <i class="fa-solid fa-rocket"></i>
+              <span class="foguete"><b>Foguetes</b></span>
+              <br />
+              <span id="custoUp2"></span>
+              <span id="qntdUp2"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/87c9f9014b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
