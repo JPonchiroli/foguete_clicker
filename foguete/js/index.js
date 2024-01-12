@@ -1,6 +1,6 @@
 var clicks = 0;
 var upgrades = 0;
-var qntdClick = 0;
+var qntdClick = 1;
 var qntdUprade1 = 0;
 var qntdUprade2 = 0;
 var custoUpgrade1 = 10;
@@ -8,10 +8,7 @@ var custoUpgrade2 = 100;
 
 document.getElementById("quantidadeClicks").textContent = clicks;
 
-document.getElementById("infoClicks").textContent =
-  "Qntd p/ Segundo: " + qntdClick;
-
-document.getElementById("qntdClick").textContent = "+" + (qntdClick + 1);
+document.getElementById("qntdClick").textContent = "+" + (qntdClick);
 
 document.getElementById("custoUp1").textContent = custoUpgrade1 + " Luas";
 document.getElementById("qntdUp1").textContent = qntdUprade1;
@@ -26,6 +23,10 @@ function upgrade1() {
   if (clicks >= custoUpgrade1) {
     document.getElementById("quantidadeClicks").textContent = clicks -=
       custoUpgrade1;
+
+    document.getElementById("infoClicks").textContent =
+      "Qntd p/ Segundo: " + qntdClick;
+
     upgrades += 1;
     custoUpgrade1 = 1 + custoUpgrade1 + qntdUprade1 * 2;
     qntdUprade1++;
@@ -34,6 +35,8 @@ function upgrade1() {
       clicks += 1;
       quantidadeClicks.textContent = clicks += upgrades;
     }, 500);
+  } else {
+    return ""
   }
 
   document.getElementById("custoUp1").textContent = custoUpgrade1 + " Luas";
@@ -70,7 +73,7 @@ showButton.addEventListener("click", (event) => {
   const mouseY = event.clientY;
 
   variableValueElement.style.left = mouseX + "px";
-  variableValueElement.style.top = mouseY - 20 + "px"; // Offset para que o valor fique acima do cursor
+  variableValueElement.style.top = mouseY - 20 + "px";
 
   variableValueElement.style.display = "inline";
   setTimeout(() => {
